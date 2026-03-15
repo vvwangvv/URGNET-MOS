@@ -134,10 +134,10 @@ def main():
         return float(score[0])
 
     lines = []
-    acr_ds = load_dataset(DATASET_ID, "acr", split="test", trust_remote_code=True)
+    acr_ds = load_dataset(DATASET_ID, "acr", split="test")
     for sid, score in run_acr(model, acr_ds, args.batch_frames):
         lines.append(f"{sid} {to_scalar(score)}")
-    ccr_ds = load_dataset(DATASET_ID, "ccr", split="test", trust_remote_code=True)
+    ccr_ds = load_dataset(DATASET_ID, "ccr", split="test")
     for sid, score in run_ccr(model, ccr_ds, args.batch_frames):
         lines.append(f"{sid} {to_scalar(score)}")
 
