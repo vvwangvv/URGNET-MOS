@@ -1,0 +1,39 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urgent_mos"
+version = "0.0.1"
+description = "The official implementation of URGNET-MOS."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Wei Wang", email = "wangweidmail0809@gmail.com" }]
+
+dependencies = [
+    "accelerate",
+    "torch",
+    "torchaudio",
+    "hydra-core",
+    "huggingface_hub",
+    "transformers",
+    "einops",
+    "omegaconf",
+]
+
+# Extras: install with pip install -e ".[dev]" (or ".[dev,docs]" for multiple)
+[project.optional-dependencies]
+train = ["pandas", "scipy"]
+dev = [
+    "pytest>=8",
+    "pytest-cov",
+    "ruff",       # linter/formatter
+    "mypy",       # type checking
+    "pre-commit", # git hooks
+]
+docs = ["mkdocs-material", "mkdocstrings[python]"]
+
+[tool.setuptools]
+packages = { find = { include = ["urgent_mos*"] } }
