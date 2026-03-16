@@ -100,7 +100,7 @@ def main():
     parser.add_argument(
         "--checkpoint",
         type=str,
-        default="urgent-challenge/urgent-mos-f1c1m5dref",
+        default="urgent-challenge/urgent-mos-f1c1m5dcorpus",
         help="Path to model checkpoint (e.g. model.pt or HuggingFace repo id)",
     )
     parser.add_argument(
